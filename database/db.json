@@ -1,0 +1,18 @@
+{
+  "words":[
+    {
+      "id": 1,
+      "language": "French",
+      "word": "la gare",
+      "translation": "Вокзал",
+      "diffuculty": 1
+    },
+    {
+      "id": 2,
+      "language": "French",
+      "word": "la cuisine",
+      "translation": "Кухня",
+      "diffuculty": 1
+    }
+  ]
+}
