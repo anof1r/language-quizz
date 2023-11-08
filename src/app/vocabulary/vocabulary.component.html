@@ -1,4 +1,2 @@
-<div *ngFor="let word of words">
-  <p>{{ word.word }}</p>
-</div>
-<button>Add addNewWord</button>
+<app-words-list [wordsList]="words"></app-words-list>
+<button (click)="addNewWord()">Add addNewWord</button>

@@ -1,21 +1,14 @@
 export interface Word {
   id: number;
-  language: string;
   word: string;
   translation: string;
-  diffuculty: 1;
+  filt: {
+    difficulty: number;
+    type: WordClass;
+    lang: string;
+  };
 }
-// {
-//   "id": 1,
-//   "word": "la gare",
-//   "translation": "Вокзал",
-//   "filt": {
-//     "diffuculty": 1,
-//     "type":"adjective",
-//     "lang": "fr"
-//   }
-// }
-//В будущем добавить таймер
+
 export interface Answer {
   word: string;
   right?: true;
@@ -29,3 +22,13 @@ export interface Question {
 export type Quiz = Array<Question>;
 
 export type WordsList = Array<Word>;
+
+export type WordClass =
+  | 'adverb'
+  | 'adjective'
+  | 'noun'
+  | 'pronoun'
+  | 'verb'
+  | 'preposition'
+  | 'conjunction'
+  | 'interjection';

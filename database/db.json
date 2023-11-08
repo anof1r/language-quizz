@@ -6,7 +6,7 @@
       "translation": "Вокзал",
       "filt": {
         "diffuculty": 1,
-        "type":"noun",
+        "type": "noun",
         "lang": "fr"
       }
     },
@@ -16,7 +16,7 @@
       "translation": "Кухня",
       "filt": {
         "diffuculty": 1,
-        "type":"noun",
+        "type": "noun",
         "lang": "fr"
       }
     }
