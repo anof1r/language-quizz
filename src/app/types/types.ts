@@ -1,9 +1,9 @@
 export interface Word {
-  id: number,
-  language: string,
-  word: string,
-  translation: string,
-  diffuculty: 1
+  id: number;
+  language: string;
+  word: string;
+  translation: string;
+  diffuculty: 1;
 }
 // {
 //   "id": 1,
@@ -17,15 +17,15 @@ export interface Word {
 // }
 //В будущем добавить таймер
 export interface Answer {
-  word: string,
-  right?: true
+  word: string;
+  right?: true;
 }
 
 export interface Question {
-  word: string,
-  ans: Array<Answer>
+  word: string;
+  ans: Array<Answer>;
 }
 
-export type Quiz = Array<Question>
+export type Quiz = Array<Question>;
 
-export type WordsList = Array<Word>
+export type WordsList = Array<Word>;

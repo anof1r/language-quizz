@@ -9,7 +9,9 @@
 
 <style>
   :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
     font-size: 14px;
     color: #333;
     box-sizing: border-box;
@@ -201,7 +203,12 @@
   }
 
   .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-family:
+      SFMono-Regular,
+      Consolas,
+      Liberation Mono,
+      Menlo,
+      monospace;
     color: white;
     padding: 0 1rem 1rem;
     margin: 0;
@@ -218,7 +225,9 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.12),
+      0 1px 2px rgba(0, 0, 0, 0.24);
     transition: 1s ease-out;
   }
 
@@ -245,17 +254,17 @@
     align-items: center;
     font-size: 12px;
     padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
+    border: 1px solid rgba(27, 31, 35, 0.2);
     border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
     margin-left: 4px;
     font-weight: 600;
   }
 
   .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
-    background-position: -.5em;
+    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+    border-color: rgba(27, 31, 35, 0.35);
+    background-position: -0.5em;
   }
 
   .github-star-badge .material-icons {
@@ -274,7 +283,7 @@
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
-    .card-container > *:not(.circle-link) ,
+    .card-container > *:not(.circle-link),
     .terminal {
       width: 100%;
     }
@@ -324,9 +333,9 @@
     </a>
 </div>
 -->
-<div class="content" role="main"> Hello </div>
+<div class="content" role="main">Hello</div>
 
-  <!-- Highlight Card
+<!-- Highlight Card
   <div class="card highlight-card card-small">
 
     <svg id="rocket" xmlns="http://www.w3.org/2000/svg" width="101.678" height="101.678" viewBox="0 0 101.678 101.678">
@@ -349,7 +358,7 @@
 
   </div>
 -->
-  <!-- Resources
+<!-- Resources
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
 
@@ -385,7 +394,7 @@
 
   </div>
 -->
-  <!-- Next Steps
+<!-- Next Steps
   <h2>Next Steps</h2>
   <p>What do you want to do next with your app?</p>
 
@@ -423,7 +432,7 @@
     </button>
   </div>
 -->
-  <!-- Terminal
+<!-- Terminal
   <div class="terminal" [ngSwitch]="selection.value">
       <pre *ngSwitchDefault>ng generate component xyz</pre>
       <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
@@ -433,7 +442,7 @@
       <pre *ngSwitchCase="'build'">ng build</pre>
   </div>
 -->
-  <!-- Links
+<!-- Links
   <div class="card-container">
     <a class="circle-link" title="Find a Local Meetup" href="https://www.meetup.com/find/?keywords=angular" target="_blank" rel="noopener">
       <svg xmlns="http://www.w3.org/2000/svg" width="24.607" height="23.447" viewBox="0 0 24.607 23.447">
@@ -451,7 +460,7 @@
     </a>
   </div>
 -->
-  <!-- Footer
+<!-- Footer
   <footer>
       Love Angular?&nbsp;
       <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
