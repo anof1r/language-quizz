@@ -5,10 +5,9 @@ import {
   OnInit,
 } from '@angular/core';
 import { VocabularyService } from './service/vocabulary.service';
-import { Word, WordsList } from '../types/types';
+import { WordsList } from '../types/types';
 import { Subject, takeUntil } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { DB_BASE_URL } from '../environment/constants';
 import {
   FormBuilder,
   FormControl,

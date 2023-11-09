@@ -1,0 +1,28 @@
+:host {
+  ::ng-deep .p-dropdown {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  ::ng-deep .p-inputtext {
+    text-align: center;
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+}
+
+.addButton {
+  display: flex;
+  justify-content: center;
+}
+.box {
+  display: flex;
+  justify-content: center;
+
+}
