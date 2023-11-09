@@ -21,11 +21,54 @@
       }
     },
     {
-      "language": "French",
-      "word": "Denis",
-      "translation": "Dunie",
-      "diffuculty": 1,
+      "word": "Testing",
+      "translation": "Тестирую",
+      "filt": {
+        "difficulty": 2,
+        "class": "verb",
+        "lang": "en"
+      },
       "id": 3
+    },
+    {
+      "word": "йцу",
+      "translation": "йцу",
+      "filt": {
+        "difficulty": 2,
+        "class": "adverb",
+        "lang": "en"
+      },
+      "id": 4
+    },
+    {
+      "word": "123",
+      "translation": "123",
+      "filt": {
+        "difficulty": 1,
+        "class": "adverb",
+        "lang": "fr"
+      },
+      "id": 5
+    },
+    {
+      "word": "123",
+      "translation": "123",
+      "filt": {
+        "difficulty": 1,
+        "class": "adverb",
+        "lang": "fr"
+      },
+      "id": 6
+    },
+    {
+      "word": "qwe",
+      "translation": "qwe",
+      "filt": {
+        "difficulty": 1,
+        "class": "adjective",
+        "lang": "en"
+      },
+      "id": 7
     }
   ]
 }

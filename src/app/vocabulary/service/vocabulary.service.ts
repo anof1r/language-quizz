@@ -13,18 +13,9 @@ export class VocabularyService {
 
   constructor(private vocabularyApiService: VocabularyApiService) {}
 
-  // addNewWord() {
-  //   this.http.post<Word>(`${DB_BASE_URL}/words`, {
-  //     language: 'French',
-  //     word: 'test',
-  //     translation: 'тест',
-  //     diffuculty: 1
-  //   }).pipe().subscribe((response: Word) => {
-  //     // untilDestroyed
-  //     this.words.push(response);
-  //   })
-  //   this.getWords()
-  // }
+  addNewWord(newWord: Word): Observable<Word> {
+    return this.vocabularyApiService.addNewWord(newWord);
+  }
 
   getAllWords(): Observable<WordsList> {
     return this.vocabularyApiService.getWords();

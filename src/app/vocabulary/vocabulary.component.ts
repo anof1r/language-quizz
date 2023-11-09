@@ -72,20 +72,20 @@ export class VocabularyComponent implements OnInit, OnDestroy {
       });
   }
 
-  //testing new word
   addNewWord() {
-    console.log(this.newWordForm.getRawValue());
-    // this.http
-    //   .post<Word>(`${DB_BASE_URL}/words`, {
-    //     language: 'French',
-    //     word: 'Denis',
-    //     translation: 'Dunie',
-    //     diffuculty: 1,
-    //   })
-    //   .pipe(takeUntil(this.destroy$))
-    //   .subscribe((response: Word) => {
-    //     this.words.push(response);
-    //   });
+    console.log(this.newWordForm.getRawValue(), this.newWordForm.invalid);
+    this.vocabularyService
+      .addNewWord(this.newWordForm.getRawValue())
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((word) => this.words.push(word));
+  }
+
+  isButtonDisabled() {
+    if (this.newWordForm.invalid) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   ngOnDestroy(): void {

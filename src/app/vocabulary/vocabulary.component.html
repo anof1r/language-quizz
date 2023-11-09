@@ -14,30 +14,28 @@
   <div formGroupName="filt">
     <p-dropdown
       [options]="dropdownWordsDifficulties"
-      optionValue="value"
-      optionLabel="label"
       placeholder="Select difficulty"
       formControlName="difficulty"
       p-dropdownLabel
     ></p-dropdown>
     <p-dropdown
       [options]="dropdownWordsLanguage"
-      optionLabel="label"
-      optionValue="value"
       placeholder="Select a Language"
       formControlName="lang"
-      p-dropdownLabel
     ></p-dropdown>
     <p-dropdown
       [options]="dropdownWordsClasses"
-      optionLabel="label"
-      optionValue="value"
       placeholder="Select a Word Class"
       formControlName="class"
-      p-dropdownLabel
     ></p-dropdown>
   </div>
 </div>
-<!-- smth fcking wrong is going on with primeng dropdown... selected option label disapears -->
-<button (click)="addNewWord()">Add addNewWord</button>
+<div class="card flex justify-content-center">
+  <p-button
+    label="Submit"
+    (onClick)="addNewWord()"
+    [disabled]="isButtonDisabled()"
+  ></p-button>
+</div>
+
 <app-words-list [wordsList]="words"></app-words-list>
