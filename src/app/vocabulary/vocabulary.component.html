@@ -1,2 +1,43 @@
-<app-words-list [wordsList]="words"></app-words-list>
+<div [formGroup]="newWordForm">
+  <input
+    type="text"
+    placeholder="Your word"
+    pInputText
+    formControlName="word"
+  />
+  <input
+    type="text"
+    placeholder="Word translation"
+    pInputText
+    formControlName="translation"
+  />
+  <div formGroupName="filt">
+    <p-dropdown
+      [options]="dropdownWordsDifficulties"
+      optionValue="value"
+      optionLabel="label"
+      placeholder="Select difficulty"
+      formControlName="difficulty"
+      p-dropdownLabel
+    ></p-dropdown>
+    <p-dropdown
+      [options]="dropdownWordsLanguage"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Select a Language"
+      formControlName="lang"
+      p-dropdownLabel
+    ></p-dropdown>
+    <p-dropdown
+      [options]="dropdownWordsClasses"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Select a Word Class"
+      formControlName="class"
+      p-dropdownLabel
+    ></p-dropdown>
+  </div>
+</div>
+<!-- smth fcking wrong is going on with primeng dropdown... selected option label disapears -->
 <button (click)="addNewWord()">Add addNewWord</button>
+<app-words-list [wordsList]="words"></app-words-list>

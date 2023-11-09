@@ -1,10 +1,12 @@
+import { FormControl } from '@angular/forms';
+
 export interface Word {
   id: number;
   word: string;
   translation: string;
   filt: {
     difficulty: number;
-    type: WordClass;
+    class: WordClass;
     lang: string;
   };
 }
@@ -18,6 +20,16 @@ export interface Question {
   word: string;
   ans: Array<Answer>;
 }
+
+export type NewWordForm = {
+  word: FormControl<string>;
+  translation: FormControl<string>;
+  filt: {
+    difficulty: FormControl<number>;
+    class: FormControl<WordClass>;
+    lang: FormControl<string>;
+  };
+};
 
 export type Quiz = Array<Question>;
 
