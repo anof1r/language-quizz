@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { WordsList } from '../types/types';
 
 @Component({
@@ -6,6 +6,16 @@ import { WordsList } from '../types/types';
   templateUrl: './words-list.component.html',
   styleUrls: ['./words-list.component.scss'],
 })
-export class WordsListComponent {
+export class WordsListComponent implements OnInit {
   @Input() wordsList: WordsList = [];
+
+  data: { word: string }[] = [
+    { word: 'firstValue' },
+    { word: 'secondValue' },
+    { word: 'thirdValue' },
+  ];
+
+  ngOnInit(): void {
+    console.log(this.wordsList);
+  }
 }

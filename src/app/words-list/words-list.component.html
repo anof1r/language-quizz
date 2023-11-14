@@ -1,3 +1,7 @@
-<div *ngFor="let word of wordsList">
-  <p>{{ word.word }}</p>
-</div>
+<p-dataView #dv [value]="data" [paginator]="true" [rows]="1" layout="list">
+  <ng-template let-word pTemplate="listItem">
+    <div class="p-col-12 p-md-4">
+      <h1>{{ word.word }}</h1>
+    </div>
+  </ng-template>
+</p-dataView>

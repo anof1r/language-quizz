@@ -7,7 +7,6 @@ import {
 import { VocabularyService } from './service/vocabulary.service';
 import { WordsList } from '../types/types';
 import { Subject, takeUntil } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import {
   FormBuilder,
   FormControl,
@@ -24,7 +23,6 @@ import {
   selector: 'app-vocabulary',
   templateUrl: './vocabulary.component.html',
   styleUrls: ['./vocabulary.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class VocabularyComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
@@ -37,7 +35,6 @@ export class VocabularyComponent implements OnInit, OnDestroy {
 
   constructor(
     protected vocabularyService: VocabularyService,
-    private http: HttpClient,
     private formBuilder: FormBuilder,
   ) {
     // need to find a way how to type this group
@@ -80,11 +77,7 @@ export class VocabularyComponent implements OnInit, OnDestroy {
   }
 
   isButtonDisabled() {
-    if (this.newWordForm.invalid) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.newWordForm.invalid ? true : false;
   }
 
   ngOnDestroy(): void {

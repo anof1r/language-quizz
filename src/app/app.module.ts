@@ -8,8 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { WordsListComponent } from './words-list/words-list.component';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
+import { TableModule } from 'primeng/table';
+import { RatingModule } from 'primeng/rating';
 
 @NgModule({
   declarations: [AppComponent, VocabularyComponent, WordsListComponent],
@@ -18,10 +21,14 @@ import { InputTextModule } from 'primeng/inputtext';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ButtonModule,
     ReactiveFormsModule,
     DropdownModule,
     InputTextModule,
+    DataViewModule,
+    TableModule,
+    RatingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

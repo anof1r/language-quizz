@@ -12,17 +12,22 @@
 .form {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  width: 400px;
-  height: 400px;
+  flex-direction: row;
+  padding: 2em;
 }
 
 .addButton {
   display: flex;
-  justify-content: center;
+
 }
+
 .box {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
 
+.row {
+  flex-direction: row;
+  align-items:flex-end;
 }

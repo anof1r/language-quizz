@@ -1,45 +1,43 @@
-<div class="box">
-  <div [formGroup]="newWordForm" class="form">
-    <input
-      type="text"
-      placeholder="Your word"
-      pInputText
-      formControlName="word"
-    />
-    <input
-      type="text"
-      placeholder="Word translation"
-      pInputText
-      formControlName="translation"
-    />
-    <div formGroupName="filt" class="form">
-      <p-dropdown
-        class="dropdown"
-        [options]="dropdownWordsDifficulties"
-        placeholder="Select difficulty"
-        formControlName="difficulty"
-        p-dropdownLabel
-      ></p-dropdown>
-      <p-dropdown
-        class="dropdown"
-        [options]="dropdownWordsLanguage"
-        placeholder="Select a Language"
-        formControlName="lang"
-      ></p-dropdown>
-      <p-dropdown
-        class="dropdown"
-        [options]="dropdownWordsClasses"
-        placeholder="Select a Word Class"
-        formControlName="class"
-      ></p-dropdown>
-    </div>
+<div [formGroup]="newWordForm" class="form">
+  <input
+    type="text"
+    placeholder="Your word"
+    pInputText
+    formControlName="word"
+  />
+  <input
+    type="text"
+    placeholder="Word translation"
+    pInputText
+    formControlName="translation"
+  />
+  <div formGroupName="filt">
+    <p-dropdown
+      class="dropdown"
+      [options]="dropdownWordsDifficulties"
+      placeholder="Select difficulty"
+      formControlName="difficulty"
+      p-dropdownLabel
+    ></p-dropdown>
+    <p-dropdown
+      class="dropdown"
+      [options]="dropdownWordsLanguage"
+      placeholder="Select a Language"
+      formControlName="lang"
+    ></p-dropdown>
+    <p-dropdown
+      class="dropdown"
+      [options]="dropdownWordsClasses"
+      placeholder="Select a Word Class"
+      formControlName="class"
+    ></p-dropdown>
   </div>
+  <p-button
+    class="addButton"
+    label="Add Word"
+    (onClick)="addNewWord()"
+    [disabled]="isButtonDisabled()"
+  ></p-button>
 </div>
 
-<p-button
-  class="addButton"
-  label="Submit"
-  (onClick)="addNewWord()"
-  [disabled]="isButtonDisabled()"
-></p-button>
 <app-words-list [wordsList]="words"></app-words-list>
