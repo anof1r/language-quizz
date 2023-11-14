@@ -1,7 +1,13 @@
-<p-dataView #dv [value]="data" [paginator]="true" [rows]="1" layout="list">
+<p-dataView
+  #dv
+  [value]="wordsList"
+  [rows]="10"
+  layout="list"
+  [paginator]="true"
+>
   <ng-template let-word pTemplate="listItem">
-    <div class="p-col-12 p-md-4">
-      <h1>{{ word.word }}</h1>
+    <div class="p-col-12">
+      <h4><span>Check: </span>{{ word.word }}</h4>
     </div>
   </ng-template>
 </p-dataView>

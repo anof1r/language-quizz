@@ -1,12 +1,7 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { VocabularyService } from './service/vocabulary.service';
-import { WordsList } from '../types/types';
-import { Subject, takeUntil } from 'rxjs';
+import { FiltersGroup, WordGroup, WordsList } from '../types/types';
+import { Subject } from 'rxjs';
 import {
   FormBuilder,
   FormControl,
@@ -27,8 +22,8 @@ import {
 export class VocabularyComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
-  protected words: WordsList = [];
-  protected newWordForm: FormGroup;
+  words: WordsList = [];
+  protected newWordForm: FormGroup<WordGroup>;
   protected dropdownWordsLanguage = LanguagesArray;
   protected dropdownWordsClasses = WordClassesArray;
   protected dropdownWordsDifficulties = WordDifficultiesArray;
@@ -38,42 +33,49 @@ export class VocabularyComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
   ) {
     // need to find a way how to type this group
-    this.newWordForm = this.formBuilder.group({
-      word: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(50),
-      ]),
-      translation: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(50),
-      ]),
-      filt: this.formBuilder.group({
-        difficulty: new FormControl(0, [
-          Validators.required,
-          Validators.min(1),
-          Validators.max(5),
-        ]),
-        class: new FormControl(null, [Validators.required]),
-        lang: new FormControl('', [Validators.required]),
+    this.newWordForm = this.formBuilder.group<WordGroup>({
+      word: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.maxLength(50)],
+      }),
+      translation: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.maxLength(50)],
+      }),
+      filt: this.formBuilder.group<FiltersGroup>({
+        difficulty: new FormControl(0, {
+          nonNullable: true,
+          validators: [
+            Validators.required,
+            Validators.min(1),
+            Validators.max(3),
+          ],
+        }),
+        class: new FormControl('', {
+          nonNullable: true,
+          validators: [Validators.required],
+        }),
+        lang: new FormControl('', {
+          nonNullable: true,
+          validators: [Validators.required],
+        }),
       }),
     });
   }
 
   ngOnInit(): void {
-    this.vocabularyService
-      .getAllWords()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((response) => {
-        response.map((word) => this.words.push(word));
-      });
+    this.vocabularyService.getAllWords().subscribe((response) => {
+      this.words = [...response]; //async pipe
+    });
   }
 
   addNewWord() {
     console.log(this.newWordForm.getRawValue(), this.newWordForm.invalid);
     this.vocabularyService
       .addNewWord(this.newWordForm.getRawValue())
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((word) => this.words.push(word));
+      .subscribe((word) => {
+        this.words = [...this.words, word];
+      });
   }
 
   isButtonDisabled() {

@@ -9,12 +9,6 @@ import { WordsList } from '../types/types';
 export class WordsListComponent implements OnInit {
   @Input() wordsList: WordsList = [];
 
-  data: { word: string }[] = [
-    { word: 'firstValue' },
-    { word: 'secondValue' },
-    { word: 'thirdValue' },
-  ];
-
   ngOnInit(): void {
     console.log(this.wordsList);
   }
