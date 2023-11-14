@@ -10,9 +10,10 @@ import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
-import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
+import { DataViewModule } from 'primeng/dataview';
 import { TableModule } from 'primeng/table';
 import { RatingModule } from 'primeng/rating';
+import { TagModule } from 'primeng/tag';
 
 @NgModule({
   declarations: [AppComponent, VocabularyComponent, WordsListComponent],
@@ -29,6 +30,7 @@ import { RatingModule } from 'primeng/rating';
     DataViewModule,
     TableModule,
     RatingModule,
+    TagModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

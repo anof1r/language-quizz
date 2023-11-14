@@ -1,6 +1,6 @@
 export const LanguagesArray = [
   { label: 'French', value: 'fr' },
-  { label: 'English', value: 'en' },
+  { label: 'English', value: 'gb' },
 ];
 
 export const WordClassesArray = [
