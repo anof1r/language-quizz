@@ -14,7 +14,6 @@ import { DataViewModule } from 'primeng/dataview';
 import { TableModule } from 'primeng/table';
 import { RatingModule } from 'primeng/rating';
 import { TagModule } from 'primeng/tag';
-
 @NgModule({
   declarations: [AppComponent, VocabularyComponent, WordsListComponent],
   imports: [

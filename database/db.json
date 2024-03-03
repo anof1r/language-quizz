@@ -7,7 +7,8 @@
       "filt": {
         "difficulty": 1,
         "class": "noun",
-        "lang": "fr"
+        "lang": "fr",
+        "group": "some group"
       }
     },
     {
@@ -17,8 +18,20 @@
       "filt": {
         "difficulty": 1,
         "class": "noun",
-        "lang": "fr"
+        "lang": "fr",
+        "group": "some group"
       }
+    },
+    {
+      "word": "Dog",
+      "translation": "Собака",
+      "filt": {
+        "difficulty": 1,
+        "class": "noun",
+        "lang": "gb",
+        "group": "Animals"
+      },
+      "id": 3
     }
   ]
 }

@@ -8,6 +8,7 @@ export interface Word {
     difficulty: number;
     class: WordClass;
     lang: string;
+    group: string;
   };
 }
 
@@ -31,6 +32,7 @@ export interface FiltersGroup {
   difficulty: FormControl<number>;
   class: FormControl<WordClass>;
   lang: FormControl<string>;
+  group: FormControl<string>;
 }
 
 export type Quiz = Array<Question>;

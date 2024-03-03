@@ -59,6 +59,10 @@ export class VocabularyComponent implements OnInit, OnDestroy {
           nonNullable: true,
           validators: [Validators.required],
         }),
+        group: new FormControl('', {
+          nonNullable: true,
+          validators: [Validators.required],
+        }),
       }),
     });
   }
@@ -79,6 +83,8 @@ export class VocabularyComponent implements OnInit, OnDestroy {
   }
 
   isButtonDisabled() {
+    console.log(this.newWordForm.invalid);
+
     return this.newWordForm.invalid ? true : false;
   }
 
