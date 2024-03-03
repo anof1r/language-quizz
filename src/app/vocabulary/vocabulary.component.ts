@@ -74,7 +74,6 @@ export class VocabularyComponent implements OnInit, OnDestroy {
   }
 
   addNewWord() {
-    console.log(this.newWordForm.getRawValue(), this.newWordForm.invalid);
     this.vocabularyService
       .addNewWord(this.newWordForm.getRawValue())
       .subscribe((word) => {

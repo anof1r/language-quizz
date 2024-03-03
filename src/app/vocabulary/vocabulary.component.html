@@ -1,46 +1,54 @@
-<div [formGroup]="newWordForm" class="form">
-  <input
-    type="text"
-    placeholder="Your word"
-    pInputText
-    formControlName="word"
-  />
-  <input
-    type="text"
-    placeholder="Word translation"
-    pInputText
-    formControlName="translation"
-  />
-  <div formGroupName="filt">
+<div [formGroup]="newWordForm" class="modern-form">
+  <div class="form-row">
+    <input
+      type="text"
+      placeholder="Your word"
+      pInputText
+      formControlName="word"
+      class="form-input"
+    />
+    <input
+      type="text"
+      placeholder="Word translation"
+      pInputText
+      formControlName="translation"
+      class="form-input"
+    />
+  </div>
+
+  <div formGroupName="filt" class="form-row">
     <p-dropdown
-      class="dropdown"
+      class="form-dropdown"
       [options]="dropdownWordsDifficulties"
       placeholder="Select difficulty"
       formControlName="difficulty"
-      p-dropdownLabel
     ></p-dropdown>
+
     <p-dropdown
-      class="dropdown"
+      class="form-dropdown"
       [options]="dropdownWordsLanguage"
       placeholder="Select a Language"
       formControlName="lang"
     ></p-dropdown>
+
     <p-dropdown
-      class="dropdown"
+      class="form-dropdown"
       [options]="dropdownWordsClasses"
       placeholder="Select a Word Class"
       formControlName="class"
     ></p-dropdown>
+
     <input
       type="text"
       placeholder="Word group"
       pInputText
       formControlName="group"
+      class="form-input"
     />
   </div>
 
   <p-button
-    class="addButton"
+    class="add-button"
     label="Add Word"
     (onClick)="addNewWord()"
     [disabled]="isButtonDisabled()"
