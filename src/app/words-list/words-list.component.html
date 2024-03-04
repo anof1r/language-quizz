@@ -1,0 +1,39 @@
+<div class="card">
+  <p-table [value]="wordsList" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Word</th>
+        <th>Translation</th>
+        <th>Class</th>
+        <th>Difficulty</th>
+        <th>Language</th>
+        <th>Group</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-word>
+      <tr>
+        <td>{{ word.word }}</td>
+        <td>{{ word.translation }}</td>
+        <td>{{ word.filt.class }}</td>
+        <td>
+          <p-rating
+            [(ngModel)]="word.filt.difficulty"
+            [readonly]="true"
+            [cancel]="false"
+            [stars]="3"
+          ></p-rating>
+        </td>
+        <td>
+          <img
+            [src]="
+              'https://flagsapi.com/' +
+              word.filt.lang.toUpperCase() +
+              '/flat/64.png'
+            "
+          />
+        </td>
+        <td>{{ word.filt.group }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

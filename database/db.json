@@ -5,9 +5,10 @@
       "word": "la gare",
       "translation": "Вокзал",
       "filt": {
-        "diffuculty": 1,
-        "type":"noun",
-        "lang": "fr"
+        "difficulty": 1,
+        "class": "noun",
+        "lang": "fr",
+        "group": "some group"
       }
     },
     {
@@ -15,10 +16,66 @@
       "word": "la cuisine",
       "translation": "Кухня",
       "filt": {
-        "diffuculty": 1,
-        "type":"noun",
-        "lang": "fr"
+        "difficulty": 1,
+        "class": "noun",
+        "lang": "fr",
+        "group": "some group"
       }
+    },
+    {
+      "word": "Dog",
+      "translation": "Собака",
+      "filt": {
+        "difficulty": 1,
+        "class": "noun",
+        "lang": "gb",
+        "group": "Animals"
+      },
+      "id": 3
+    },
+    {
+      "word": "Flower",
+      "translation": "Цветок",
+      "filt": {
+        "difficulty": 2,
+        "class": "noun",
+        "lang": "gb",
+        "group": "Nature"
+      },
+      "id": 4
+    },
+    {
+      "word": "asd",
+      "translation": "asd",
+      "filt": {
+        "difficulty": 2,
+        "class": "adjective",
+        "lang": "gb",
+        "group": "asd"
+      },
+      "id": 5
+    },
+    {
+      "word": "asd",
+      "translation": "asd",
+      "filt": {
+        "difficulty": 2,
+        "class": "noun",
+        "lang": "gb",
+        "group": "asd"
+      },
+      "id": 6
+    },
+    {
+      "word": "asd1",
+      "translation": "asd",
+      "filt": {
+        "difficulty": 2,
+        "class": "noun",
+        "lang": "gb",
+        "group": "asd"
+      },
+      "id": 7
     }
   ]
 }
