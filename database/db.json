@@ -43,39 +43,6 @@
         "group": "Nature"
       },
       "id": 4
-    },
-    {
-      "word": "asd",
-      "translation": "asd",
-      "filt": {
-        "difficulty": 2,
-        "class": "adjective",
-        "lang": "gb",
-        "group": "asd"
-      },
-      "id": 5
-    },
-    {
-      "word": "asd",
-      "translation": "asd",
-      "filt": {
-        "difficulty": 2,
-        "class": "noun",
-        "lang": "gb",
-        "group": "asd"
-      },
-      "id": 6
-    },
-    {
-      "word": "asd1",
-      "translation": "asd",
-      "filt": {
-        "difficulty": 2,
-        "class": "noun",
-        "lang": "gb",
-        "group": "asd"
-      },
-      "id": 7
     }
   ]
 }
