@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { VocabularyService } from './service/vocabulary.service';
 import { FiltersGroup, WordGroup, WordsList } from '../types/types';
 import { Subject } from 'rxjs';
@@ -19,14 +19,13 @@ import {
   templateUrl: './vocabulary.component.html',
   styleUrls: ['./vocabulary.component.scss'],
 })
-export class VocabularyComponent implements OnInit, OnDestroy {
-  private destroy$ = new Subject<void>();
+export class VocabularyComponent implements OnInit {
 
-  words: WordsList = [];
+  protected words = signal<WordsList>([]);
   protected newWordForm: FormGroup<WordGroup>;
-  protected dropdownWordsLanguage = LanguagesArray;
-  protected dropdownWordsClasses = WordClassesArray;
-  protected dropdownWordsDifficulties = WordDifficultiesArray;
+  protected readonly dropdownWordsLanguage = LanguagesArray;
+  protected readonly dropdownWordsClasses = WordClassesArray;
+  protected readonly dropdownWordsDifficulties = WordDifficultiesArray;
 
   constructor(
     protected vocabularyService: VocabularyService,
@@ -69,7 +68,7 @@ export class VocabularyComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.vocabularyService.getAllWords().subscribe((response) => {
-      this.words = [...response]; //async pipe
+      this.words.update((words) => [...words, ...response]);
     });
   }
 
@@ -77,18 +76,12 @@ export class VocabularyComponent implements OnInit, OnDestroy {
     this.vocabularyService
       .addNewWord(this.newWordForm.getRawValue())
       .subscribe((word) => {
-        this.words = [...this.words, word];
+        this.words.update((words) => [...words, word]);
       });
   }
 
   isButtonDisabled() {
-    console.log(this.newWordForm.invalid);
-
     return this.newWordForm.invalid ? true : false;
   }
 
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
 }

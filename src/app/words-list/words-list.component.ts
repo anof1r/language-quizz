@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Signal } from '@angular/core';
 import { WordsList } from '../types/types';
 
 @Component({
@@ -6,10 +6,7 @@ import { WordsList } from '../types/types';
   templateUrl: './words-list.component.html',
   styleUrls: ['./words-list.component.scss'],
 })
-export class WordsListComponent implements OnInit {
-  @Input() wordsList: WordsList = [];
+export class WordsListComponent {
+  @Input() wordsList!: Signal<WordsList>;
 
-  ngOnInit(): void {
-    console.log(this.wordsList);
-  }
 }

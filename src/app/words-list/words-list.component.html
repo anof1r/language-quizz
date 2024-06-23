@@ -1,11 +1,5 @@
 <div class="card">
-  <p-table
-    [value]="wordsList"
-    [tableStyle]="{ 'min-width': '50rem' }"
-    [paginator]="true"
-    [rows]="6"
-    [rowsPerPageOptions]="[5, 10, 20]"
-  >
+  <p-table [value]="wordsList()" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
       <tr>
         <th>Word</th>
